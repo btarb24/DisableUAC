@@ -3,9 +3,9 @@ using System.IO;
 
 namespace DisableUAC
 {
-  using System.Globalization;
+	using System.Globalization;
 
-  public static class Logging
+	public static class Logging
 	{
 		public static void WriteErrorLog(Exception ex)
 		{
@@ -16,15 +16,15 @@ namespace DisableUAC
 		{
 			try
 			{
-        using (var sw = new StreamWriter(AppDomain.CurrentDomain.BaseDirectory + "\\DisableUAC.log", true))
-        {
-          sw.WriteLine(DateTime.Now.ToString(CultureInfo.InvariantCulture) + ": " + message);
+				using (var sw = new StreamWriter(AppDomain.CurrentDomain.BaseDirectory + "\\DisableUAC.log", true))
+				{
+					sw.WriteLine(DateTime.Now.ToString(CultureInfo.InvariantCulture) + ": " + message);
 
-          sw.Flush();
-          sw.Close();
-        }
+					sw.Flush();
+					sw.Close();
+				}
 			}
-			catch 
+			catch
 			{ }
 		}
 	}
